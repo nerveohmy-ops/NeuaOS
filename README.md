@@ -130,3 +130,8 @@ Before a base distribution is selected, keep the shell as portable as practical 
 ## Name and identity
 
 **NeuaOS** is the working project name. The visual direction combines monochrome geometry, dot-based details, restrained red accents, and selective Liquid Glass-inspired surfaces. The design must remain original and accessible: translucency should always preserve contrast and readability.
+
+## License
+
+NeuaOS is licensed under the GNU General Public License v3.0 or later.
+See [LICENSE](LICENSE) for the full text.
