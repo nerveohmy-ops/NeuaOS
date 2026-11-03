@@ -17,6 +17,7 @@ qt_add_qml_module(neua-shell
         NeuaTokens.qml
         qml/Components/Island.qml
         qml/Components/Dock.qml
+        qml/Components/Widgets.qml
 )
 
 target_link_libraries(neua-shell PRIVATE Qt6::Quick Qt6::QuickEffects)

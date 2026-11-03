@@ -1,14 +1,16 @@
 import QtQuick
 import NeuaShell
 import "Components"
+
 Window {
     id: root
-    width: 960
-    height: 600
+    width: 1200
+    height: 800
     visible: true
     title: "NeuaOS Shell"
     color: NeuaTokens.background
 
+    // Фон
     Rectangle {
         anchors.fill: parent
         gradient: Gradient {
@@ -17,10 +19,10 @@ Window {
         }
     }
 
+    // Часы
     Column {
         anchors.centerIn: parent
-        spacing: NeuaTokens.spacingXs
-
+        spacing: 8
         Text {
             id: timeText
             anchors.horizontalCenter: parent.horizontalCenter
@@ -28,15 +30,15 @@ Window {
             font.family: NeuaTokens.fontFamily
             font.pixelSize: NeuaTokens.fontClock
             font.weight: NeuaTokens.weightBold
-            text: Qt.formatTime(new Date(), "hh:mm")
+            text: Qt.formatTime(new Date(), "HH:mm")
         }
-
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
             color: NeuaTokens.textSecondary
             font.family: NeuaTokens.fontFamily
-            font.pixelSize: NeuaTokens.fontBody
-            text: Qt.formatDate(new Date(), "dddd, d MMMM")
+            font.pixelSize: 14
+            font.letterSpacing: 2.0
+            text: Qt.formatDate(new Date(), "dddd, d MMMM").toUpperCase()
         }
     }
 
@@ -44,18 +46,28 @@ Window {
         interval: 1000
         running: true
         repeat: true
-        onTriggered: timeText.text = Qt.formatTime(new Date(), "hh:mm")
+        onTriggered: timeText.text = Qt.formatTime(new Date(), "HH:mm")
     }
 
+    // Island (сверху)
     Island {
         anchors.top: parent.top
-        anchors.topMargin: 10 // Жестко 10 пикселей вниз
+        anchors.topMargin: 20
         anchors.horizontalCenter: parent.horizontalCenter
     }
-        // --- Dock (внизу по центру) ---
+
+    // Виджеты (справа)
+    Widgets {
+        anchors.right: parent.right
+        anchors.rightMargin: 40
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: -20 // Чуть выше центра
+    }
+
+    // Док (снизу)
     Dock {
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: NeuaTokens.spacingXl
+        anchors.bottomMargin: 24
         anchors.horizontalCenter: parent.horizontalCenter
     }
 }
