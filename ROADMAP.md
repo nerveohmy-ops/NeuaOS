@@ -14,10 +14,10 @@ Tasks:
 - [x] Define project name and product direction.
 - [x] Establish initial design principles.
 - [x] Draft technical specification and architecture.
-- [ ] Choose project license.
-- [ ] Create Git repository and initial branch.
-- [ ] Add contribution and issue templates.
-- [ ] Record open architecture decisions.
+- [x] Choose project license.
+- [x] Create Git repository and initial branch.
+- [x] Add contribution and issue templates.
+- [x] Record open architecture decisions.
 
 Exit criteria:
 - repository builds a minimal Qt 6 application;
